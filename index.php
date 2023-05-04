@@ -53,15 +53,33 @@ $hotels = [
 <body>
 <div class="container mt-4">
 
-<?php foreach ($hotels as $array => $hotel_details) { ?>
-    <ul>
-        <li>
-            <?php foreach ($hotel_details as $details) { ?>
-            <h3><?php echo $details["name"]; ?></h3>
-            <?php } ?>
-        </li>
-    </ul>
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Vote</th>
+      <th scope="col">Parking Spot</th>
+      <th scope="col">Distance to center</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php foreach ($hotels as $key => $details) { ?>
+    <tr>
+      <th scope="row"><?php echo $key; ?></th>
+      <td><?php echo $details["name"]; ?></td>
+      <td><?php echo $details["description"]; ?></td>
+      <td><?php echo $details["vote"]; ?></td>
+      <td><?php echo $details["parking"]; ?></td>
+      <td><?php echo $details["distance_to_center"]; ?></td>
+    </tr>
+    
     <?php } ?>
+  </tbody>
+</table>
+  
 </div>
 
     
